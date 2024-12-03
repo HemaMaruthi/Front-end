@@ -9,16 +9,17 @@ function App() {
   
   const handleSubmit =()=>{
     // setStudent([...student, newStudent])
-
-    axios.post('http://localhost:3000/college-student/post',newStudent).then((res)=>{
+    axios.post('https://back-end-670y.onrender.com/college-student/post',newStudent).then((res)=>{
     console.log(res.data)
     })
   }
   useEffect(()=>{
-    axios.get('http://localhost:3000/college-student').then((res)=>{
-    console.log(res.data)
-    setStudent(res.data)
-    })
+    axios
+      .get("https://back-end-670y.onrender.com/college-student")
+      .then((res) => {
+        console.log(res.data);
+        setStudent(res.data);
+      });
 
   },[])
   console.log(student)
